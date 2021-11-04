@@ -22,7 +22,6 @@ lscpu_out=`lscpu`
 meminfo_out=$(cat /proc/meminfo)
 vmstat_t_out=$(vmstat -t)
 
-hostname=$(hostname -f)
 cpu_number=$(echo $(echo "$lscpu_out" | egrep "^CPU\(s\):") | cut -d' ' -f2)
 cpu_architecture=$(echo $(echo "$lscpu_out" | egrep "^Architecture:") | cut -d' ' -f2)
 cpu_model=$(echo $(echo "$lscpu_out" | egrep "^Model:") | cut -d' ' -f2)
