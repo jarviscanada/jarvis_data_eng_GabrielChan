@@ -32,13 +32,13 @@ disk_available=$(echo $(echo "$df_out" | tail -n1) | cut -d' ' -f4)
 timestamp=$(echo $(echo "$vmstat_t_out" | tail -n1) | cut -d' ' -f 18-19)
 
 # Query for finding the matching id in the host_info table
-id_query="(SELECT id FROM host_usage WHERE hostname='$hostname')";
-host_id=$(psql -h $psql_host -p $psql_post -d $db_name -U $psql_user -c "$id_query")
+id_query="SELECT id FROM host_info WHERE hostname='$hostname'"
+host_id=$(psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -t -c "$id_query")
 
 # Query for inserting the data into the host_usage table
 insert_stmt="INSERT INTO host_usage VALUES ('$timestamp', '$host_id', '$memory_free',
-'$cpu_idle', '$cpu_kernel', '$disk_io', '$disk_available')";
+'$cpu_idle', '$cpu_kernel', '$disk_io', '$disk_available')"
 
-psql -h $psql_host -p $psql_post -d $db_name -U $psql_user -c "$insert_stmt"
+psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
 
 exit $?

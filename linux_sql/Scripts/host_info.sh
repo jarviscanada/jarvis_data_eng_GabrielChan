@@ -32,12 +32,12 @@ timestamp=$(echo $(echo "$vmstat_t_out" | tail -n1) | cut -d' ' -f 18-19)
 
 # Obtain number of rows in host_info to determine value of id
 id_query="SELECT COUNT(*) FROM host_info"
-id=$($(psql -h $psql_host -p $psql_host -d $db_name -U $psql_user -t -c "$id_query") + 1)
+id=$(($(psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -t -c "$id_query") + 1))
 
 # Query for inserting the data into the host_usage table
 insert_stmt="INSERT INTO host_info VALUES ('$id', '$hostname', '$cpu_number', '$cpu_architecture', '$cpu_model',
-'$cpu_mhz', '$l2_cache', '$total_mem', '$timestamp')";
+'$cpu_mhz', '$l2_cache', '$total_mem', '$timestamp')"
 
-psql -h $psql_host -p $psql_post -d $db_name -U $psql_user -c "$insert_stmt"
+psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
 
 exit $?
