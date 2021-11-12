@@ -24,11 +24,11 @@ vmstat_d_out=$(vmstat -d)
 df_out=$(df -BM /)
 
 # Filter and assign specific stats to variables
-memory_free=$(echo $(echo "$meminfo_out" | egrep "^MemFree:") | cut -d' ' -f 2-3)
+memory_free=$(echo $(echo "$meminfo_out" | egrep "^MemFree:") | cut -d' ' -f 2-3 | sed 's/[^0-9]*//g')
 cpu_idle=$(echo $(echo "$vmstat_t_out" | tail -n1) | cut -d' ' -f15)
 cpu_kernel=$(echo $(echo "$vmstat_t_out" | tail -n1) | cut -d' ' -f14)
 disk_io=$(echo $(echo "$vmstat_d_out" | tail -n1) | cut -d' ' -f10)
-disk_available=$(echo $(echo "$df_out" | tail -n1) | cut -d' ' -f4)
+disk_available=$(echo $(echo "$df_out" | tail -n1) | cut -d' ' -f4 | sed 's/[^0-9]*//g')
 timestamp=$(echo $(echo "$vmstat_t_out" | tail -n1) | cut -d' ' -f 18-19)
 
 # Query for finding the matching id in the host_info table

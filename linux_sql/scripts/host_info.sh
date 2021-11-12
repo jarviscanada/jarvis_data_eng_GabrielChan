@@ -26,8 +26,8 @@ cpu_number=$(echo $(echo "$lscpu_out" | egrep "^CPU\(s\):") | cut -d' ' -f2)
 cpu_architecture=$(echo $(echo "$lscpu_out" | egrep "^Architecture:") | cut -d' ' -f2)
 cpu_model=$(echo $(echo "$lscpu_out" | egrep "^Model:") | cut -d' ' -f2)
 cpu_mhz=$(echo $(echo "$lscpu_out" | egrep "^CPU MHz:") | cut -d' ' -f3)
-l2_cache=$(echo $(echo "$lscpu_out" | egrep "^L2 cache:") | cut -d' ' -f3)
-total_mem=$(echo $(echo "$meminfo_out" | egrep "^MemTotal:") | cut -d' ' -f 2-3)
+l2_cache=$(echo $(echo "$lscpu_out" | egrep "^L2 cache:") | cut -d' ' -f3 | sed 's/[^0-9]*//g')
+total_mem=$(echo $(echo "$meminfo_out" | egrep "^MemTotal:") | cut -d' ' -f 2-3 | sed 's/[^0-9]*//g')
 timestamp=$(echo $(echo "$vmstat_t_out" | tail -n1) | cut -d' ' -f 18-19)
 
 # Obtain number of rows in host_info to determine value of id
