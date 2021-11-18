@@ -1,0 +1,78 @@
+# Preferred name (Characters only)
+name: "Gabriel Chan"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_GabrielChan
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: "I graduated from University of Toronto, St. George campus as a Computer Science specialist. I studied a wide range of programming languages including Python, Java and C. I have also worked on many group projects with groups as large as 13 other peers.I've taken many Computer Science courses so I am familiar with a wide range of programming languages. I have also learned about many programming principles such as Object Oriented Programming as well as Software Development Life Cycles. I've also taken a handful of mathematics courses so I am familiar with some mathematical concepts like Calculus and Linear Algebra."
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Python
+    - C/C#
+    - Agile/Scrum
+    - Object Oriented Programming
+  # At least 5 skills
+  competent:
+    - Bash
+    - Unity
+    - SQL
+    - Git
+    - Artificial Intelligence
+  # At least 5 skills
+  familiar:
+    - HTML
+    - Javascript
+    - CSS
+    - React
+    - Docker
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "The Jarvis Linux Cluster Administration manages about 10 nodes each using the CentOS 7 Linux distribution. These nodes are also connected through a switch and are able to communicate using internal IPv4 addresses. The purpose of this project is to track and record the performance of each node as well as the resources each node uses. This data will be stored in an RDBMS database and used to generate reports for plans regarding future nodes."
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Trash Panda Unity Project"
+    #URL is optional
+    git_url: https://github.com/jialori/TrashPanda
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Developed a Unity video game alongside 13 other peers including fellow developers, artists, animators and composers. The players takes the role of a raccoon mom causing as much damage as possible to a construction site in an effort to protect her children. I designed the artificial intelligence of enemies (construction workers) and designed a handful of UI elements."
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2020-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Designed back end of multiple projects. Participated in Scrum meetings with peers daily and at the end of each sprint."
+
+#List of edcuation
+education: 
+  - school_name: "University of Toronto"
+    duration: "2013 - 2020"
+    degree: "Honours Bachelor of Science"
+    department: "Computer Science"
+    awards_achievements:
+        - "GPA: 2.92/4.0"
+
+#Optional section
+others:
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Video Games"
+      - "Anime TV shows"
