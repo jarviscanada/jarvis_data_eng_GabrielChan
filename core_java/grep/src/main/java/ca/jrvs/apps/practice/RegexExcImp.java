@@ -14,7 +14,7 @@ public class RegexExcImp implements RegexExc {
     /**
      * Return true if filename extension is jpg or jpeg (case-insensitive).
      * @param filename      File name to be matched
-     * @return boolean      Boolean result determining if the file name matches
+     * @return              True if the file name matches; false otherwise
      */
     public boolean matchJpeg(String filename) {
         return Pattern.matches(".+\\.jp(e)?g$", filename);
@@ -24,7 +24,7 @@ public class RegexExcImp implements RegexExc {
      * Return true if ip is valid. For the purposes of this method, IP addresses may range from
      * 0.0.0.0 to 999.999.999.999.
      * @param ip            IP address to be matched
-     * @return boolean      Boolean result determining if the IP address matches
+     * @return              True if the IP address matches; false otherwise
      */
     public boolean matchIp(String ip) {
         return Pattern.matches("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}", ip);
@@ -33,7 +33,7 @@ public class RegexExcImp implements RegexExc {
     /**
      * Return true if the given line is empty (e.g. empty, white space, tabs, etc..).
      * @param line          Line to be matched
-     * @return boolean      Boolean result determining if the line matches
+     * @return              True if the line matches; false otherwise
      */
     public boolean isEmptyLine(String line) {
         return Pattern.matches("\\s*", line);
@@ -43,8 +43,8 @@ public class RegexExcImp implements RegexExc {
      * Performs the bash 'grep' operation using the given regular expression 'regex' and file 'readFile'
      * @param regex             The regular expression to match while reading
      * @param readFile          The file to be read
-     * @return List<String>     All lines in the given file that match the given regular expression
-     * @throws IOException      Exception that will be thrown if the file cannot be read
+     * @return                  All lines in the given file that match the given regular expression
+     * @throws IOException      If the file cannot be read
      */
     public List<String> jGrep(String regex, File readFile) throws IOException {
         // Retrieve all lines from the given file
@@ -62,11 +62,11 @@ public class RegexExcImp implements RegexExc {
      * @param regex             The regular expression to match while reading
      * @param rootPath          The directory to be navigated
      * @param writeFile         The results will be written to this file
-     * @return List<String>     All lines in the files that were read that match the given regular expression
-     * @throws IOException      Exception that will be thrown if 'writeFile' cannot be written to
+     * @return                  All lines in the files that were read that match the given regular expression
+     * @throws IOException      If 'writeFile' cannot be written to
      */
     public List<String> jRecGrep(String regex, File rootPath, File writeFile) throws IOException {
-        // Retrieve all files in the given directory including files in subdirectories
+        // Retrieve all files in the given directory
         File[] allFiles = rootPath.listFiles();
         List<String> fileResult;
 
