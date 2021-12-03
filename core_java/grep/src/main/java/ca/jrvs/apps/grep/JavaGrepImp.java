@@ -14,9 +14,9 @@ import org.slf4j.LoggerFactory;
 public class JavaGrepImp implements JavaGrep {
     final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
 
-    private String regex;
-    private File rootPath;
-    private File outFile;
+    protected String regex;
+    protected File rootPath;
+    protected File outFile;
 
     /**
      * Creates a JavaGrepImp instance using the given regular expression, root directory and output file
@@ -30,10 +30,6 @@ public class JavaGrepImp implements JavaGrep {
         setOutFile(outFile);
     }
 
-    /**
-     * Top level search workflow
-     * @throws IOException
-     */
     public void process() throws IOException {
         ArrayList<String> matchedLines = new ArrayList<>();
 
@@ -48,11 +44,6 @@ public class JavaGrepImp implements JavaGrep {
         writeToFile(matchedLines);
     }
 
-    /**
-     * Traverse a given directory and return all files
-     * @param rootDir       Input directory
-     * @return              Files under 'rootDir'
-     */
     public List<File> listFiles(File rootDir) {
         File[] files = rootDir.listFiles();
         ArrayList<File> allFiles = new ArrayList<>();
@@ -68,31 +59,14 @@ public class JavaGrepImp implements JavaGrep {
         return allFiles;
     }
 
-    /**
-     * Read a file and return all the lines
-     * @param inputFile                     File to be read
-     * @return                              All the lines from the file
-     * @throws IllegalArgumentException     If a given 'inputFile' is not a file
-     * @throws IOException                  If the file could not be read
-     */
     public List<String> readLines(File inputFile) throws IOException, IllegalArgumentException {
         return Files.readAllLines(inputFile.toPath());
     }
 
-    /**
-     * Check if a line contains the given regex pattern
-     * @param line          Input string
-     * @return              True if there is a match; false otherwise
-     */
     public boolean containsPattern(String line) {
         return Pattern.matches(regex, line);
     }
 
-    /**
-     * Write a given list of lines to a file
-     * @param lines             Lines to be written
-     * @throws IOException      If write failed
-     */
     public void writeToFile(List<String> lines) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(outFile));
 
@@ -102,50 +76,26 @@ public class JavaGrepImp implements JavaGrep {
         writer.close();
     }
 
-    /**
-     * Retrieve the root path associated with this instance
-     * @return              This instance's root path
-     */
     public String getRootPath() {
         return rootPath.getName();
     }
 
-    /**
-     * Set the root path of this instance to be 'rootPath'
-     * @param rootPath      Input root path
-     */
     public void setRootPath(String rootPath) {
         this.rootPath = new File(rootPath);
     }
 
-    /**
-     * Retrieve the regular expression associated with this instance
-     * @return              This instance's regular expression
-     */
     public String getRegex() {
         return regex;
     }
 
-    /**
-     * Set the regular expression of this instance to be 'regex'
-     * @param regex         Input regular expression
-     */
     public void setRegex(String regex) {
         this.regex = regex;
     }
 
-    /**
-     * Retrieve the output file associated with this instance
-     * @return              This instance's output file
-     */
     public String getOutFile() {
         return outFile.getName();
     }
 
-    /**
-     * Set the output file of this instance to be 'outFile'
-     * @param outFile         Input output file
-     */
     public void setOutFile(String outFile) {
         this.outFile = new File(outFile);
     }
