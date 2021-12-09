@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class JavaGrepImp implements JavaGrep {
-    final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
+    protected final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
 
     protected String regex;
     protected File rootPath;
@@ -33,7 +33,9 @@ public class JavaGrepImp implements JavaGrep {
     public void process() throws IOException {
         ArrayList<String> matchedLines = new ArrayList<>();
 
+        // For each file in the root directory
         for (File file : listFiles(rootPath)) {
+            // For each line read from the current file
             for (String line : readLines(file)) {
                 if (containsPattern(line)) {
                     matchedLines.add(line);
@@ -45,8 +47,11 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     public List<File> listFiles(File rootDir) {
+        // Retrieve all files in 'rootDir'
         File[] files = rootDir.listFiles();
         ArrayList<File> allFiles = new ArrayList<>();
+
+        // For each file
         for (File file : files) {
             if (file.isFile()) {
                 allFiles.add(file);
@@ -70,6 +75,7 @@ public class JavaGrepImp implements JavaGrep {
     public void writeToFile(List<String> lines) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(outFile));
 
+        // For each line
         for (String line : lines) {
             writer.write(line + "\n");
         }
@@ -101,6 +107,14 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     public static void main(String[] args) throws IOException {
+        if (args.length == 3) {
+            JavaGrepImp jGrep = new JavaGrepImp(args[0], args[1], args[2]);
+            jGrep.process();
+        }
+        else {
+            System.out.println("Incorrect number of arguments");
+        }
+        /*
         final String PATH = "C:\\Users\\Gabriel\\Desktop\\Git\\jarvis_data_eng_GabrielChan\\core_java\\grep\\src\\main";        // The directory to be used when reading files
         String jpegRegex = ".+\\.jp(e)?g$";
         String IPRegex = "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}";
@@ -110,5 +124,6 @@ public class JavaGrepImp implements JavaGrep {
 
         jpegGrep.process();
         IPGrep.process();
+        */
     }
 }
