@@ -12,19 +12,20 @@ public class TwoSumSolution {
      * need to loop through an array containing n values n times. Hence, the time complexity of this solution is
      * quadratic
      */
-    public List<List<Integer>> loopTwoSum(List<Integer> arr, int sum) {
+    public List<List<Integer>> loopTwoSum(int[] arr, int sum) {
         List<List<Integer>> pairs = new ArrayList<>();
-        for (int i = 0; i < arr.size(); i++) {
-            for (int j = i + 1; j < arr.size(); j++) {
-                if (arr.get(i) + arr.get(j) == sum) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == sum) {
                     List<Integer> p = new ArrayList<>();
-                    p.add(arr.get(i));
-                    p.add(arr.get(j));
+                    p.add(i);
+                    p.add(j);
                     pairs.add(p);
                 }
             }
         }
         return pairs;
+
     }
 
     /**
@@ -35,18 +36,18 @@ public class TwoSumSolution {
      * of pairs if it does and populate the hash table with the current value. All these operations run in constant
      * time and the 'for' loop only runs once. Hence, the time complexity of this solution is linear.
      */
-    public List<List<Integer>> mapTwoSum(List<Integer> arr, int sum) {
+    public List<List<Integer>> mapTwoSum(int[] arr, int sum) {
         Hashtable<Integer, Integer> table = new Hashtable<> ();
         List<List<Integer>> pairs = new ArrayList<>();
-        for (int i = 0; i < arr.size(); i++) {
-            int comp = sum - arr.get(i);
+        for (int i = 0; i < arr.length; i++) {
+            int comp = sum - arr[i];
             if (table.get(comp) != null) {
                 List<Integer> p = new ArrayList<>();
-                p.add(arr.get(i));
+                p.add(arr[i]);
                 p.add(comp);
                 pairs.add(p);
             }
-            table.put(arr.get(i), arr.get(i));
+            table.put(arr[i], arr[i]);
         }
         return pairs;
     }
