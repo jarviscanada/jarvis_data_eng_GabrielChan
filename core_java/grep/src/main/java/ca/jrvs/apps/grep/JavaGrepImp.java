@@ -107,6 +107,7 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     public static void main(String[] args) throws IOException {
+
         if (args.length == 3) {
             JavaGrepImp jGrep = new JavaGrepImp(args[0], args[1], args[2]);
             jGrep.process();
@@ -114,6 +115,7 @@ public class JavaGrepImp implements JavaGrep {
         else {
             System.out.println("Incorrect number of arguments");
         }
+
         /*
         final String PATH = "C:\\Users\\Gabriel\\Desktop\\Git\\jarvis_data_eng_GabrielChan\\core_java\\grep\\src\\main";        // The directory to be used when reading files
         String jpegRegex = ".+\\.jp(e)?g$";
