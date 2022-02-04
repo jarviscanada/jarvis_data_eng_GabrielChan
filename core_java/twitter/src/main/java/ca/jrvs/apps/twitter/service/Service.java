@@ -1,6 +1,10 @@
 package ca.jrvs.apps.twitter.service;
 
-import ca.jrvs.apps.twitter.model.Tweet;
+import ca.jrvs.apps.twitter.dao.NotFoundException;
+import ca.jrvs.apps.twitter.dao.Tweet;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 public interface Service {
@@ -13,7 +17,7 @@ public interface Service {
    *
    * @throws IllegalArgumentException if text exceed max number of allowed characters or lat/long out of range
    */
-  Tweet postTweet(Tweet tweet);
+  Tweet postTweet(Tweet tweet) throws UnsupportedEncodingException, URISyntaxException, InvalidTweetException, NotFoundException;
 
 
   /**
@@ -25,7 +29,7 @@ public interface Service {
    *
    * @throws IllegalArgumentException if id or fields param is invalid
    */
-  Tweet showTweet(String id, String[] fields);
+  Tweet showTweet(String id, String[] fields) throws InvalidQueryException, URISyntaxException, NotFoundException;
 
   /**
    * Delete Tweet(s) by id(s).
@@ -35,6 +39,6 @@ public interface Service {
    *
    * @throws IllegalArgumentException if one of the IDs is invalid.
    */
-  List<Tweet> deleteTweets(String[] ids);
+  List<Tweet> deleteTweets(String[] ids) throws URISyntaxException, InvalidQueryException;
 
 }
