@@ -57,9 +57,13 @@ professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
   - title: "Software Developer"
     company: "Jarvis"
-    duration: "2020-present"
+    duration: "October,2021 - February,2022,June,2022 - present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Designed back end of multiple projects. Participated in Scrum meetings with peers daily and at the end of each sprint."
+  - title: "Quality Assurance Analyst"
+    company: "National Bank of Canada"
+    duration: "February,2022 - June,2022"
+    description: "Designed and executed tests to ensure proper performance of web applications. Participated in Scrum meetings with peers daily and at the end of each sprint."
 
 #List of edcuation
 education: 
