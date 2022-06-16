@@ -24,7 +24,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_GabrielCha
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Designed back end of multiple projects. Participated in Scrum meetings with peers daily and at the end of each sprint.
+**Software Developer, Jarvis (October,2021 - February,2022,June,2022 - present)**: Designed back end of multiple projects. Participated in Scrum meetings with peers daily and at the end of each sprint.
+
+**Quality Assurance Analyst, National Bank of Canada (February,2022 - June,2022)**: Designed and executed tests to ensure proper performance of web applications. Participated in Scrum meetings with peers daily and at the end of each sprint.
 
 
 ## Education
