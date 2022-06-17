@@ -35,6 +35,7 @@ public class TwitterDao implements CrdDao<Tweet, String>{
 
     @Override
     public Tweet create(Tweet entity) throws URISyntaxException, UnsupportedEncodingException, NotFoundException {
+        // Set up URI for POST operations
         String uriString = API_BASE_URI + POST_PATH + QUERY_SYM + "status" +
                 EQUAL + URLEncoder.encode(entity.getText(), StandardCharsets.UTF_8.toString());
         if (entity.getCoordinates() != null) {
@@ -43,19 +44,24 @@ public class TwitterDao implements CrdDao<Tweet, String>{
                     "lat" + EQUAL + coordinates.get(1);
         }
         URI uri = new URI(uriString);
+        // Retrieve tweet from response
         return parseResponseBody(httpHelper.httpPost(uri, null), HTTP_OK);
     }
 
     @Override
     public Tweet findById(String s) throws URISyntaxException, NotFoundException {
-        return parseResponseBody(httpHelper.httpGet(new URI(API_BASE_URI + SHOW_PATH + QUERY_SYM + "id" +
-                EQUAL + s), null), HTTP_OK);
+        // Set up URI for GET operations
+        URI uri = new URI(API_BASE_URI + SHOW_PATH + QUERY_SYM + "id" + EQUAL + s);
+        // Retrieve tweet from response
+        return parseResponseBody(httpHelper.httpGet(uri, null), HTTP_OK);
     }
 
     @Override
     public Tweet deleteById(String s) throws URISyntaxException, NotFoundException {
-        return parseResponseBody(httpHelper.httpPost(new URI(API_BASE_URI + DELETE_PATH + "/" + s + ".json"),
-                null), HTTP_OK);
+        // Set up URI for DELETE operations
+        URI uri = new URI(API_BASE_URI + DELETE_PATH + "/" + s + ".json");
+        // Retrieve tweet from response
+        return parseResponseBody(httpHelper.httpPost(uri, null), HTTP_OK);
     }
 
     protected Tweet parseResponseBody(HttpResponse response, Integer expectedStatusCode) throws NotFoundException {

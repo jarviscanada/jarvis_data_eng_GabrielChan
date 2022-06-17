@@ -36,8 +36,8 @@ public class Entities {
     @Override
     public String toString() {
         return "{\n" +
-                "\t\"hashtags\":" + hashTags.toString() + ",\n" +
-                "\t\"user_mentions\":" + userMentions.toString() + "\n" +
+                "\t\"hashtags\":" + ((hashTags != null) ? hashTags.toString() : "[]") + ",\n" +
+                "\t\"user_mentions\":" + ((userMentions != null) ? userMentions.toString() : "[]") + "\n" +
                 "}";
     }
 

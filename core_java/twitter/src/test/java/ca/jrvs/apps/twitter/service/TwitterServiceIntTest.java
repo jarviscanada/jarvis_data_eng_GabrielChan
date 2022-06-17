@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 
 public class TwitterServiceIntTest {
     private TwitterService service;
+    public Float lon, lat;
 
     @Before
     public void setUp() {
@@ -27,6 +28,10 @@ public class TwitterServiceIntTest {
         HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
         TwitterDao dao = new TwitterDao(httpHelper);
         service = new TwitterService(dao);
+        lat = 1f;
+        lon = -1f;
+        // Need to determine how to create a tweet and obtain the Twitter ID of the immediately created tweet to test
+        // deletion.
     }
 
     @Test
@@ -34,9 +39,8 @@ public class TwitterServiceIntTest {
             NotFoundException {
         String hashTag = "#abc";
         String text = "sometext" + hashTag + System.currentTimeMillis();
-        Float lat = 1f;
-        Float lon = -1f;
-        Tweet postTweet = new Tweet (text, lon, lat);
+
+        Tweet postTweet = new Tweet (text);
         System.out.println(postTweet);
 
         Tweet tweet = service.postTweet(postTweet);
@@ -66,13 +70,19 @@ public class TwitterServiceIntTest {
     }
 
     @Test
-    public void deleteTweets() throws URISyntaxException, InvalidQueryException {
-        String id1 = "1486053698119819271";
-        String text1 = "sometext#abc1643137784294";
-        String id2 = "1486053007557107716";
-        String text2 = "sometext#abc1643137619618";
-        String id3 = "1485712202199932930";
-        String text3 = "sometext#abc1643056150571";
+    public void deleteTweets() throws URISyntaxException, InvalidQueryException, InvalidTweetException, UnsupportedEncodingException, NotFoundException {
+        String text1 = "To be deleted1";
+        String text2 = "To be deleted2";
+        String text3 = "To be deleted3";
+
+        Tweet tweet1 = service.postTweet(new Tweet(text1));
+        Tweet tweet2 = service.postTweet(new Tweet(text2));
+        Tweet tweet3 = service.postTweet(new Tweet(text3));
+
+        String id1 = tweet1.getId_str();
+        String id2 = tweet2.getId_str();
+        String id3 = tweet3.getId_str();
+
         String[] ids = {id1, id2, id3};
         List<Tweet> tweets = service.deleteTweets(ids);
         assertNotNull(tweets);

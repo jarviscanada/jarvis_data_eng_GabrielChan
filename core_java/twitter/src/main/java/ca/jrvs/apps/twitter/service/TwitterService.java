@@ -67,6 +67,7 @@ public class TwitterService implements Service {
     }
 
     protected Tweet selectFields(Tweet tweet, String[] fields) throws InvalidQueryException {
+        // Initialize Tweet fields
         String created_at = null;
         String text = null;
         Entities entities = new Entities(null, null);
@@ -76,6 +77,7 @@ public class TwitterService implements Service {
         Boolean favourited = null;
         Boolean retweeted = null;
 
+        // Filter out which fields are being queried
         for (String s : fields) {
             if (s.equals("created_at")) {
                 created_at = tweet.getCreated_at();
@@ -109,6 +111,8 @@ public class TwitterService implements Service {
                 throw new InvalidQueryException("Invalid field query");
             }
         }
+
+        // Return the tweet with the requested fields
         return new Tweet(created_at, tweet.getId(), text, entities, coordinates, retweetCount, favouriteCount,
                 favourited, retweeted);
     }

@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 
 public class TwitterDaoIntTest {
     private TwitterDao dao;
+    public Float lon, lat;
 
     @Before
     public void setUp() {
@@ -23,15 +24,17 @@ public class TwitterDaoIntTest {
         System.out.println(consumerKey + "|" + consumerSecret + "|" + accessToken + "|" + tokenSecret);
         HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
         dao = new TwitterDao(httpHelper);
+        lat = 1f;
+        lon = -1f;
+        // Need to determine how to create a tweet and obtain the Twitter ID of the immediately created tweet to test
+        // deletion.
     }
 
     @Test
     public void create() throws URISyntaxException, UnsupportedEncodingException, NotFoundException {
         String hashTag = "#abc";
         String text = "sometext" + hashTag + System.currentTimeMillis();
-        Float lat = 1f;
-        Float lon = -1f;
-        Tweet postTweet = new Tweet (text, lon, lat);
+        Tweet postTweet = new Tweet (text);
         System.out.println(postTweet);
 
         Tweet tweet = dao.create(postTweet);
@@ -53,10 +56,11 @@ public class TwitterDaoIntTest {
     }
 
     @Test
-    public void deleteById() throws URISyntaxException, NotFoundException {
-        String id = "1484227425458343944";
-        Tweet tweet = dao.deleteById(id);
-        assertNotNull(tweet);
-        assertEquals(id, String.valueOf(tweet.getId()));
+    public void deleteById() throws URISyntaxException, NotFoundException, UnsupportedEncodingException {
+        Tweet tweet = dao.create(new Tweet("To be deleted"));
+        String id = tweet.getId_str();
+        Tweet result = dao.deleteById(id);
+        assertNotNull(result);
+        assertEquals(id, String.valueOf(result.getId()));
     }
 }

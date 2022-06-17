@@ -12,6 +12,7 @@ import ca.jrvs.apps.twitter.service.InvalidQueryException;
 import ca.jrvs.apps.twitter.service.InvalidTweetException;
 import ca.jrvs.apps.twitter.service.Service;
 import ca.jrvs.apps.twitter.service.TwitterService;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
@@ -29,7 +30,7 @@ public class TwitterCLIApp {
     private static Service service;
     private static Controller controller;
 
-    public static void run(String[] args) throws NotFoundException, URISyntaxException, InvalidQueryException,
+    public static void run(String @NotNull [] args) throws NotFoundException, URISyntaxException, InvalidQueryException,
             InvalidTweetException, UnsupportedEncodingException {
         if (args[0].equals("GET")) {
             Tweet tweet = controller.showTweet(Arrays.copyOfRange(args, 1, args.length));

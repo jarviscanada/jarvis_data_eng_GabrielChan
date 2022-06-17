@@ -50,6 +50,7 @@ public class TwitterServiceUnitTest {
                 + "}";
         Tweet expectedTweet = JsonUtils.getTweetFromJson(validTweetJsonStr);
         when(mockDao.create(expectedTweet)).thenReturn(expectedTweet);
+
         TwitterService spyService = Mockito.spy(service);
         Tweet tweet = spyService.postTweet(expectedTweet);
         assertNotNull(tweet);

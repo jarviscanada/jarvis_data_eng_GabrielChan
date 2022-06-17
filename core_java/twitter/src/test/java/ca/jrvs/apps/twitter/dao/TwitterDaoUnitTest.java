@@ -17,6 +17,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
+
 @RunWith(MockitoJUnitRunner.class)
 public class TwitterDaoUnitTest {
     @Mock
@@ -26,7 +29,7 @@ public class TwitterDaoUnitTest {
     TwitterDao dao;
 
     @Test
-    public void showTweet() throws Exception {
+    public void create() throws NotFoundException, UnsupportedEncodingException, URISyntaxException {
         //test failed request
         String hashTag = "#abc";
         //adding timestamp as twitter doesn't allow duplicate tweets
@@ -36,9 +39,7 @@ public class TwitterDaoUnitTest {
         try {
             dao.create(new Tweet(text));
             fail();
-        } catch (RuntimeException e) {
-            assertTrue(true);
-        }
+        } catch (RuntimeException e) {}
 
         //Test happy path
         //however, we don't want to call parseResponseBody.
@@ -69,14 +70,6 @@ public class TwitterDaoUnitTest {
         assertNotNull(tweet.getText());
     }
 
-    @Test
-    public void postTweet() throws Exception {
-        fail("Not Implemented");
-    }
-
-
-    @Test
-    public void deleteTweet() throws Exception {
-        fail("Not Implemented");
-    }
+    // If we're mocking 'HttpHelper' and 'parseResponseBody', then there is nothing to test in 'findById' and
+    // 'deleteById' in a unit setting.
 }

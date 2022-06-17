@@ -42,7 +42,7 @@ public class TwitterController implements Controller {
             indices.add(index + hashTagText.length());
             hashTags.add(new HashTag(indices, hashTagText));
         }
-        Tweet tweet = new Tweet(text, -1.0f, 1.0f);
+        Tweet tweet = new Tweet(text);
         tweet.getEntities().setHashTags(hashTags);
         return service.postTweet(tweet);
     }

@@ -34,12 +34,13 @@ public class Tweet {
         id_str = String.valueOf(this.id);
         this.text = text;
         entities = new Entities();
-        coordinates = null;
+        coordinates = new Coordinates(-1f, 1f, "Point");
         retweetCount = 0;
         favouriteCount = 0;
         favourited = false;
         retweeted = false;
     }
+
 
     public Tweet(String text, float lon, float lat) {
         this.created_at = java.time.Instant.now().toString();
@@ -141,7 +142,7 @@ public class Tweet {
                 "\"id\":" + id + ",\n" +
                 "\"id_str\":\"" + id_str + "\",\n" +
                 "\"text\":\"" + text + "\",\n" +
-                "\"entities\":" + entities.toString() + ",\n" +
+                "\"entities\":" + entities + ",\n" +
                 "\"coordinates\":" + coordinates + ",\n" +
                 "\"retweet_count\":" + retweetCount + ",\n" +
                 "\"favorite_count\":" + favouriteCount + ",\n" +
