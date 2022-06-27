@@ -26,8 +26,6 @@ public class TwitterDaoIntTest {
         dao = new TwitterDao(httpHelper);
         lat = 1f;
         lon = -1f;
-        // Need to determine how to create a tweet and obtain the Twitter ID of the immediately created tweet to test
-        // deletion.
     }
 
     @Test
@@ -44,7 +42,6 @@ public class TwitterDaoIntTest {
         assertEquals(2, tweet.getCoordinates().getCoordinates().size());
         assertEquals(lon, tweet.getCoordinates().getCoordinates().get(0));
         assertEquals(lat, tweet.getCoordinates().getCoordinates().get(1));
-        //assertTrue(hashTag.contains(tweet.getEntities().getHashTags().get(0).getText()));
     }
 
     @Test

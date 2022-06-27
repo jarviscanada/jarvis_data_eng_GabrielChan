@@ -13,22 +13,29 @@ import ca.jrvs.apps.twitter.service.InvalidTweetException;
 import ca.jrvs.apps.twitter.service.Service;
 import ca.jrvs.apps.twitter.service.TwitterService;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 
+@org.springframework.stereotype.Controller
 public class TwitterCLIApp {
-    private static String CONSUMER_KEY = System.getenv("consumerKey");
-    private static String CONSUMER_SECRET = System.getenv("consumerSecret");
-    private static String ACCESS_TOKEN = System.getenv("accessToken");
-    private static String TOKEN_SECRET = System.getenv("tokenSecret");
+    private static String consumerKey;
+    private static String consumerSecret;
+    private static String accessToken;
+    private static String tokenSecret;
 
     private static HttpHelper helper;
     private static CrdDao dao;
     private static Service service;
     private static Controller controller;
+
+    @Autowired
+    public TwitterCLIApp(Controller controller) {
+        this.controller = controller;
+    }
 
     public static void run(String @NotNull [] args) throws NotFoundException, URISyntaxException, InvalidQueryException,
             InvalidTweetException, UnsupportedEncodingException {
@@ -56,7 +63,12 @@ public class TwitterCLIApp {
 
     public static void main(String[] args) throws InvalidTweetException, NotFoundException,
             UnsupportedEncodingException, URISyntaxException, InvalidQueryException {
-        helper = new TwitterHttpHelper(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, TOKEN_SECRET);
+        consumerKey = System.getenv("consumerKey");
+        consumerSecret = System.getenv("consumerSecret");
+        accessToken = System.getenv("accessToken");
+        tokenSecret = System.getenv("tokenSecret");
+
+        helper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
         dao = new TwitterDao(helper);
         service = new TwitterService(dao);
         controller = new TwitterController(service);

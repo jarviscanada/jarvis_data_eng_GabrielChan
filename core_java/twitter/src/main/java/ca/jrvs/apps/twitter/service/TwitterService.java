@@ -1,15 +1,19 @@
 package ca.jrvs.apps.twitter.service;
 
 import ca.jrvs.apps.twitter.dao.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class TwitterService implements Service {
     private CrdDao dao;
 
+    @Autowired
     public TwitterService(CrdDao dao) {
         this.dao = dao;
     }
