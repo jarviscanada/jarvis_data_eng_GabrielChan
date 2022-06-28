@@ -1,0 +1,191 @@
+[33mcommit 2d7c18475e5d2670bce7e38a3ffac6a78facf6de[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/codingChallenge[m[33m, [m[1;31morigin/feature/codingChallenge[m[33m, [m[1;32mfeature/JavaTwitter[m[33m)[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Wed Dec 22 16:31:02 2021 -0500
+
+    Implemented parse solution for String to Integer coding challenge
+
+[33mcommit 7b08a029e9c672b9bd497d41357d428fd7ee0136[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Sun Dec 19 18:43:48 2021 -0500
+
+    Completed map comparison coding challenge
+
+[33mcommit a98ea9070a7b133871ed047056258a1c2bdc67bd[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Fri Dec 17 13:01:58 2021 -0500
+
+    Implemented map solution for Two Sum coding challenge
+
+[33mcommit 94248bec1e8f682181beb38776fd0313cd0d10e9[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Thu Dec 16 15:34:15 2021 -0500
+
+    Implemented brute force solution for Two Sum coding challenge
+
+[33mcommit 3f43aad5f23cda0d60c3b4dece5be233e93ebc2a[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Fri Dec 10 11:46:55 2021 -0500
+
+    Completed Fibonacci Number coding challenge
+
+[33mcommit 946289d49dc2562a7cf38c39ed06d5b272d75a51[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Wed Dec 8 16:01:22 2021 -0500
+
+    Added lambda implementation of JavaGrep
+
+[33mcommit 9dd15d8c5cdc117e9b59de979ac1e313cff28e7b[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Fri Dec 3 16:53:54 2021 -0500
+
+    Cleaned up javadocs of Grep Implementation and updated pom file
+
+[33mcommit d5c672fb14889f248c54f9e65dff59984ef4e311[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Wed Dec 1 14:45:28 2021 -0500
+
+    Implemented JavaGrep interface
+
+[33mcommit 1e60f1dbc0c6fd4374d1a7a983314d228fbf9f5f[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Tue Nov 30 12:09:11 2021 -0500
+
+    Implemented regex and grep functions
+
+[33mcommit 93dbc008cf0d4640621a1f24e7789e9f912da494[m
+Author: Gabriel Chan <gabriel.chan166@gmail.com>
+Date:   Thu Nov 25 18:14:38 2021 +0000
+
+    Added Hello World java file
+
+[33mcommit e9757607efb2859c935a572d27ae70243ccd7934[m
+Author: Gabriel Chan <gabriel.chan166@gmail.com>
+Date:   Tue Nov 23 20:31:17 2021 +0000
+
+    Created core_java project structure
+
+[33mcommit 292c84f6e536036c6002a33e83d3f34c37a5b8c8[m
+Author: Gabriel Chan <gabriel.chan166@gmail.com>
+Date:   Thu Nov 18 21:50:52 2021 +0000
+
+    Init practice project
+
+[33mcommit 1665544a2f88b569207ff308dd601b619db63356[m
+Merge: 1580fa9 327b1c6
+Author: GabrielChan1 <32020883+GabrielChan1@users.noreply.github.com>
+Date:   Fri Nov 12 15:17:48 2021 -0500
+
+    Merge pull request #3 from jarviscanada/feature/psql_docker
+    
+    Feature/psql docker
+
+[33mcommit 327b1c6ebf4d6c9b52d851a52f1698bd9953ef25[m[33m ([m[1;31morigin/feature/psql_docker[m[33m, [m[1;32mfeature/psql_docker[m[33m)[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Fri Nov 12 15:14:11 2021 -0500
+
+    Modified Testing, Deployment and Improvements sections and added architecture diagram to README
+
+[33mcommit 128cdd686dd6f5d26a9e44d81723083fa2cb151a[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Thu Nov 11 18:01:07 2021 -0500
+
+    Added to Quick Start, Scripts and Database Modelling sections of README
+
+[33mcommit c52fdfea1f8c77e6536df49b858506f06d71f465[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Thu Nov 11 15:00:10 2021 -0500
+
+    Finished and added queries.sql
+
+[33mcommit c778093dec48b803ada7821e124c5dd0ba1d2079[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Tue Nov 9 17:15:19 2021 -0500
+
+    Restructured tables in host_info.sh and host_usage.sh
+
+[33mcommit 7faf7b58e27bef16864c060403fc5d17e0f1c871[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Tue Nov 9 17:13:47 2021 -0500
+
+    Restructured tables in host_info.sh and host_usage.sh
+
+[33mcommit cd83b5fbd425a657841b0e8cf4adf26bab1b58ab[m
+Author: Gabriel Chan <gabriel.chan166@gmail.com>
+Date:   Tue Nov 9 16:40:38 2021 +0000
+
+    Renamed directories in VM
+
+[33mcommit 5290ced7ae08788182ce9e288ab94b75570773d3[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Tue Nov 9 11:33:26 2021 -0500
+
+    Renamed and restructured project directories
+
+[33mcommit 9bcec6abf65690fa7b437e8b8345cbf1c0aea8c8[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Tue Nov 9 11:11:58 2021 -0500
+
+    Modified queries.sql
+
+[33mcommit be227439091debcdf6bc0dbfb3dabf5b8bf51199[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Mon Nov 8 14:24:04 2021 -0500
+
+    Adding queries.sql file and ddl_scratch.ddl scratch file
+
+[33mcommit 1580fa9c43baeeb5e085c44eca45942a6c21ec66[m
+Merge: b16ce03 4654bad
+Author: GabrielChan1 <32020883+GabrielChan1@users.noreply.github.com>
+Date:   Fri Nov 5 17:13:46 2021 -0400
+
+    Merge pull request #1 from jarviscanada/feature/psql_docker
+    
+    Feature/psql docker
+
+[33mcommit 4654bad74222a9ce865ff45ec83af26df12517e0[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Thu Nov 4 12:34:47 2021 -0400
+
+    Fixed typos and added some flags in host_info.sh and host_usage.sh
+
+[33mcommit 73a762b6d18bee1687177fa3235ddf3527d4608f[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Thu Nov 4 12:02:47 2021 -0400
+
+    Modified table constraints in ddl.sql and removed duplicate code from host_info.sh
+
+[33mcommit 55aea7f92e49689e5c0ee86c7c6981e84bad6209[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Thu Nov 4 11:09:49 2021 -0400
+
+    Adding host_info.sh and host_usage.sh
+
+[33mcommit ece389b0ab8519ec3774329318e13c4130bff249[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Tue Nov 2 17:49:29 2021 -0400
+
+    Adding ddl.sql file
+
+[33mcommit cb6dd50f0601871ca7153ea854d5aea5cd37ffbe[m
+Author: Gabriel Chan <gabriel.chan166@gmail.com>
+Date:   Fri Oct 29 21:19:43 2021 +0000
+
+    Adding text file for debugging
+
+[33mcommit e44c188dc93cd17c0febd9f98bc6baf9a25e73b3[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Fri Oct 29 16:07:14 2021 -0400
+
+    Created psql_docker file
+
+[33mcommit b16ce039e1114c2792a6d05f51f2f0d81c9c8ce0[m
+Author: GabrielChan <neoco@techie.com>
+Date:   Sat Oct 23 17:36:45 2021 -0400
+
+    Wrote Introduction, Implementation, Testing and Deployment sections of README file
+
+[33mcommit 110700a2307ad5b221b2c925d7e1f1719e872ff5[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mrelease[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Gabriel Chan <gabriel.chan166@gmail.com>
+Date:   Thu Oct 21 18:30:42 2021 +0000
+
+    Init project
