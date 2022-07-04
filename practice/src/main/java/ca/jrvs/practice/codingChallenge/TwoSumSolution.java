@@ -10,7 +10,7 @@ public class TwoSumSolution {
      * Justification:
      * We need to loop through the given array once for each element to find all possible combinations. That is, we
      * need to loop through an array containing n values n times. Hence, the time complexity of this solution is
-     * quadratic
+     * quadratic.
      */
     public List<List<Integer>> loopTwoSum(int[] arr, int sum) {
         List<List<Integer>> pairs = new ArrayList<>();

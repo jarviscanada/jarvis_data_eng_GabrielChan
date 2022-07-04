@@ -12,7 +12,7 @@ public class StringToIntSolution {
         int endIndex;
         int i = 0;
 
-        // Strip leading whitespace
+        // Strip leading whitespace.
         while(i < str.length() && Character.isWhitespace(str.charAt(i))) {
             i++;
         }
@@ -20,7 +20,7 @@ public class StringToIntSolution {
             return 0;
         }
 
-        // Check if the first character is either '-' or '+'
+        // Check if the first character is either '-' or '+'.
         if (str.charAt(i) == '-') {
             isNegative = true;
             i++;
@@ -37,7 +37,7 @@ public class StringToIntSolution {
         }
 
         // Iterate through the rest of the string until either a non-digit char is found or the end of the string
-        // is reached
+        // is reached.
         while(i < str.length() && Character.isDigit(str.charAt(i))) {
             i++;
         }
@@ -48,7 +48,7 @@ public class StringToIntSolution {
             endIndex = i;
         }
 
-        // Parse the substring with Integer.parseInt
+        // Parse the substring with Integer.parseInt.
         int value = Integer.parseInt(str.substring(startIndex, endIndex));
         if (isNegative) {
             return 0 - value;
@@ -72,7 +72,7 @@ public class StringToIntSolution {
         int endIndex;
         int i = 0;
 
-        // Strip leading whitespace
+        // Strip leading whitespace.
         while(i < str.length() && Character.isWhitespace(str.charAt(i))) {
             i++;
         }
@@ -80,7 +80,7 @@ public class StringToIntSolution {
             return 0;
         }
 
-        // Check if the first character is either '-' or '+'
+        // Check if the first character is either '-' or '+'.
         if (str.charAt(i) == '-') {
             isNegative = true;
             i++;
@@ -97,7 +97,7 @@ public class StringToIntSolution {
         }
 
         // Iterate through the rest of the string until either a non-digit char is found or the end of the string
-        // is reached
+        // is reached.
         while(i < str.length() && Character.isDigit(str.charAt(i))) {
             i++;
         }
