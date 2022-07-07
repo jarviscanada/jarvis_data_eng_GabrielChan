@@ -7,8 +7,45 @@ test and verify each of the application's methods. Finally, Maven and Spring wer
 Docker was used for deployment.
 
 # Quick Start
-- how to package your app using mvn?
-- how to run your app with docker?
+
+To package this application using Maven, the SSH keys and tokens for your Twitter account first need to be exported as 
+environment variables. This is done by typing the following:
+```
+export accessToken=[your access token]
+export consumerKey=[your consumer key]
+export consumerSecret=[your consumer secret]
+export tokenSecret=[your token secret]
+```
+Once the keys and tokens have been stored into environment variables, run the command `mvn clean package`.
+
+To run this application with Docker, the SSH keys and tokens for the Twitter account are also needed. 
+The application can be run by entering the following command
+`docker run -e accessToken=[your access token] -e consumerKey=[your consumer key] -e 
+consumerSecret=[your consumer secret] -e tokenSecret=[your token secret] [image name] [your query]`
+
+Alternatively, if the keys and tokens are already stored in environment variables, you can simply pass them into the
+run command itself
+`docker run -e [access token env. variable] -e [consumer key env. variable] -e [consumer secret env. variable] 
+-e [token secret env. variable] [image name] [your query]`
+
+Finally, if the keys and tokens are stored in an .env file, that file can be passed into the run command as well
+`docker run --env-file [file path] [image name] [your query]`
+
+Keep in mind, that when passing in a file, the keys and tokens need to be formatted like so
+```
+accessToken=[your access token]
+consumerKey=[your consumer key]
+consumerSecret=[your consumer secret]
+tokenSecret=[your token secret]
+```
+
+This application will run three different kinds of queries:
+
+`GET <tweet id> [field1] [field2] [field3] ...`
+
+`POST <tweet text>`
+
+`DELETE <id1> [id2] [id3] ...`
 
 # Design
 ## UML diagram
@@ -39,7 +76,10 @@ respectively.
 - `favourited` indicates whether this tweet was favourited or not.
 
 ## Spring
-- How you managed the dependencies using Spring?
+`TwitterHttpHelper`, `TwitterDao`, `TwitterService`, `TwitterController` and `TwitterCLIApp` are marked as Components 
+and have been autowired. `TwitterCLIComponentScan` acts as the configuration file and scans the package to ensure that 
+these autowired components are processed by the Spring container when it is created. Once the components have been 
+processed, bean definitions and service requests for these beans are generated at runtime.
 
 # Test
 Unit and Integration test scripts were written using JUnit. Mockito was used to mock external methods and classes in
@@ -47,7 +87,9 @@ unit tests so only the code in the method in question was tested. JUnit annotati
 initialize key components such as dependency classes and SSH keys before each test. 
 
 ## Deployment
-How did you dockerize your app.
+This application was deployed using Docker. A docker file was first created which copies the .jar file into a location
+on the user's computer and then sets up an entrypoint command for running the .jar file. An image was then built from
+this docker file and pushed onto Docker Hub
 
 # Improvements
 - While it may be generally frowned upon to skip parts of the testing process, I would have omitted writing the

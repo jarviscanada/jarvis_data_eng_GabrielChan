@@ -22,11 +22,6 @@ import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class TwitterCLIApp {
-    private static String consumerKey;
-    private static String consumerSecret;
-    private static String accessToken;
-    private static String tokenSecret;
-
     private static HttpHelper helper;
     private static CrdDao dao;
     private static Service service;
@@ -63,12 +58,7 @@ public class TwitterCLIApp {
 
     public static void main(String[] args) throws InvalidTweetException, NotFoundException,
             UnsupportedEncodingException, URISyntaxException, InvalidQueryException {
-        consumerKey = System.getenv("consumerKey");
-        consumerSecret = System.getenv("consumerSecret");
-        accessToken = System.getenv("accessToken");
-        tokenSecret = System.getenv("tokenSecret");
-
-        helper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
+        helper = new TwitterHttpHelper();
         dao = new TwitterDao(helper);
         service = new TwitterService(dao);
         controller = new TwitterController(service);
