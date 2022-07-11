@@ -13,11 +13,6 @@ import java.net.URISyntaxException;
 import static org.junit.Assert.*;
 
 public class TwitterHttpHelperTest {
-    private static String CONSUMER_KEY;
-    private static String CONSUMER_SECRET;
-    private static String ACCESS_TOKEN;
-    private static String TOKEN_SECRET;
-
     private static String API_BASE_URI;
     private static String POST_PATH;
     private static String SHOW_PATH;
@@ -27,10 +22,6 @@ public class TwitterHttpHelperTest {
 
     @BeforeClass
     public static void classSetUp() {
-        CONSUMER_KEY = System.getenv("consumerKey");
-        CONSUMER_SECRET = System.getenv("consumerSecret");
-        ACCESS_TOKEN = System.getenv("accessToken");
-        TOKEN_SECRET = System.getenv("tokenSecret");
         API_BASE_URI = "https://api.twitter.com";
         POST_PATH = "/1.1/statuses/update.json";
         SHOW_PATH = "/1.1/statuses/show.json";
@@ -39,7 +30,7 @@ public class TwitterHttpHelperTest {
 
     @Before
     public void setUp() {
-        helper = new TwitterHttpHelper(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, TOKEN_SECRET);
+        helper = new TwitterHttpHelper();
     }
 
     @Test

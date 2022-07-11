@@ -22,20 +22,13 @@ public class TwitterControllerIntTest {
     public Float lon, lat;
 
     @Before
-    public void setUp() throws Exception {
-        String consumerKey = System.getenv("consumerKey");
-        String consumerSecret = System.getenv("consumerSecret");
-        String accessToken = System.getenv("accessToken");
-        String tokenSecret = System.getenv("tokenSecret");
-        System.out.println(consumerKey + "|" + consumerSecret + "|" + accessToken + "|" + tokenSecret);
-        HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
+    public void setUp(){
+        HttpHelper httpHelper = new TwitterHttpHelper();
         TwitterDao dao = new TwitterDao(httpHelper);
         TwitterService service = new TwitterService(dao);
         controller = new TwitterController(service);
         lat = 1f;
         lon = -1f;
-        // Need to determine how to create a tweet and obtain the Twitter ID of the immediately created tweet to test
-        // deletion.
     }
 
     @Test

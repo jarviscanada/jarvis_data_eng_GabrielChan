@@ -51,10 +51,6 @@ public class TwitterCLIBean {
 
     @Bean
     HttpHelper helper() {
-        String consumerKey = System.getenv("consumerKey");
-        String consumerSecret = System.getenv("consumerSecret");
-        String accessToken = System.getenv("accessToken");
-        String tokenSecret = System.getenv("tokenSecret");
-        return new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
+        return new TwitterHttpHelper();
     }
 }
