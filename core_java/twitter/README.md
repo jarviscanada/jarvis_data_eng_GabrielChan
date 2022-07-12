@@ -96,6 +96,9 @@ this docker file and pushed onto Docker Hub
 majority of the unit tests in this project. The Twitter API as well as external methods are too central in the
 implementation of each method. Thus, after mocking each method and class, it is meaningless to test what code is left
 in a unit setting.
+- The GET command requires that the user specify a set of fields to retrieve. I would have liked to set the GET command 
+to retrieve all fields by default, should the user not have specified any fields. Unfortunately, setting default
+parameter values is not a feature supported by Java.
 - If the scope allowed for it, I would have liked to implement a Graphical User Interface for this application. 
 Issuing commands with a terminal can be confusing whereas using an interface with buttons and text fields is much
 simpler.
