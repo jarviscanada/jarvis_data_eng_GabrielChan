@@ -43,9 +43,17 @@ This application will run three different kinds of queries:
 
 `GET <tweet id> [field1] [field2] [field3] ...`
 
+The GET command will retrieve the tweet with the given id and the content of the given fields. All the valid fields
+are listed in the Models section.
+
 `POST <tweet text>`
 
+The POST command will create a new tweet with the given text.
+
 `DELETE <id1> [id2] [id3] ...`
+
+The DELETE command will delete the tweet with the given id. If more than one id is given, all the tweets that contain
+a given id will be deleted.
 
 # Design
 ## UML diagram
