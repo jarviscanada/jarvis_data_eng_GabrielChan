@@ -17,6 +17,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_GabrielCha
 
 **Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_GabrielChan/tree/master/linux_sql)]: The Jarvis Linux Cluster Administration manages about 10 nodes each using the CentOS 7 Linux distribution. These nodes are also connected through a switch and are able to communicate using internal IPv4 addresses. The purpose of this project is to track and record the performance of each node as well as the resources each node uses. This data will be stored in an RDBMS database and used to generate reports for plans regarding future nodes.
 
+**Twitter CRUD App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_GabrielChan/tree/master/core_java/twitter)]: The Twitter CRUD app accesses the user's Twitter account through a set of key and secret tokens and sends HTTP requests to perform CRUD operations using Twitter's REST API. This application allows the user to create, retrieve and delete Tweets using a command line interface. Core technologies used in the implementation of this application include, OAuth, Google GSON, Mockito, JUnit, Maven and Docker.
+
 
 ## Highlighted Projects
 **Trash Panda Unity Project** [[GitHub](https://github.com/jialori/TrashPanda)]: Developed a Unity video game alongside 13 other peers including fellow developers, artists, animators and composers. The players takes the role of a raccoon mom causing as much damage as possible to a construction site in an effort to protect her children. I designed the artificial intelligence of enemies (construction workers) and designed a handful of UI elements.
