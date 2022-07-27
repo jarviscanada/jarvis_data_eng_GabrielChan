@@ -23,6 +23,11 @@
       "description": "The Jarvis Linux Cluster Administration manages about 10 nodes each using the CentOS 7 Linux distribution. These nodes are also connected through a switch and are able to communicate using internal IPv4 addresses. The purpose of this project is to track and record the performance of each node as well as the resources each node uses. This data will be stored in an RDBMS database and used to generate reports for plans regarding future nodes.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
+    },
+    {
+      "description": "The Twitter CRUD app accesses the user's Twitter account through a set of key and secret tokens and sends HTTP requests to perform CRUD operations using Twitter's REST API. This application allows the user to create, retrieve and delete Tweets using a command line interface. Core technologies used in the implementation of this application include, OAuth, Google GSON, Mockito, JUnit, Maven and Docker.",
+      "git_url": "/core_java/twitter",
+      "name": "Twitter CRUD App"
     }
   ],
   "name": "Gabriel Chan",
