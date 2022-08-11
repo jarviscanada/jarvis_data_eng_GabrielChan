@@ -17,7 +17,7 @@ If running from Docker container:
 docker run gabrielchan1/grep [regular expression] [root directory] [output file]
 ```
 
-#Implementation
+# Implementation
 ## Pseudocode
 - Iterate through each file in the given directory.
 - If the file is readable, iterate through each line and retrieve the lines that match the given regular expression.

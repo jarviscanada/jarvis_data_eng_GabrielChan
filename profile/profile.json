@@ -28,6 +28,13 @@
       "description": "The Twitter CRUD app accesses the user's Twitter account through a set of key and secret tokens and sends HTTP requests to perform CRUD operations using Twitter's REST API. This application allows the user to create, retrieve and delete Tweets using a command line interface. Core technologies used in the implementation of this application include, OAuth, Google GSON, Mockito, JUnit, Maven and Docker.",
       "git_url": "/core_java/twitter",
       "name": "Twitter CRUD App"
+
+      "description": [
+        "Grep App: This application, given a regular expression, a directory and an output file, will read each file in the given directory (including in sub-directories) and return lines that match the given regular expression. Notable classes that were used include the `Pattern` class for matching lines with regular expression as well as the `BufferedReader`, `BufferedWriter` and `nio.Files` class for reading and writing files. There is also a lambda implementation which focuses more on using lambda functions and the `Stream` class. The IntelliJ IDE was used to write this application and Docker was used for deployment.",
+        "JDBC App: This application interacts with a PostgreSQL database to perform CRUD operations. Java Database Connectivity provides the framework for interacting with the database. Operations are performed using the `JDBCExecutor` class and the Data Access Object outlined in `CustomerDAO`. Maven was used to help construct the project and install the necessary dependencies."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
     }
   ],
   "name": "Gabriel Chan",
