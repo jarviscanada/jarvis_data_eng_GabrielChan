@@ -13,7 +13,7 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_GabrielChan",
   "highlighted_projects": [
     {
-      "description": "Developed a Unity video game alongside 13 other peers including fellow developers, artists, animators and composers. The players takes the role of a raccoon mom causing as much damage as possible to a construction site in an effort to protect her children. I designed the artificial intelligence of enemies (construction workers) and designed a handful of UI elements.",
+      "description": "Developed a Unity video game alongside peers including fellow developers, artists, animators and composers. The players takes the role of a raccoon mom causing as much damage as possible to a construction site in an effort to protect her children. I designed the artificial intelligence of enemies (construction workers) and designed a handful of UI elements.",
       "git_url": "https://github.com/jialori/TrashPanda",
       "name": "Trash Panda Unity Project"
     }
@@ -25,13 +25,10 @@
       "name": "Cluster Monitor"
     },
     {
-      "description": "The Twitter CRUD app accesses the user's Twitter account through a set of key and secret tokens and sends HTTP requests to perform CRUD operations using Twitter's REST API. This application allows the user to create, retrieve and delete Tweets using a command line interface. Core technologies used in the implementation of this application include, OAuth, Google GSON, Mockito, JUnit, Maven and Docker.",
-      "git_url": "/core_java/twitter",
-      "name": "Twitter CRUD App"
-
       "description": [
         "Grep App: This application, given a regular expression, a directory and an output file, will read each file in the given directory (including in sub-directories) and return lines that match the given regular expression. Notable classes that were used include the `Pattern` class for matching lines with regular expression as well as the `BufferedReader`, `BufferedWriter` and `nio.Files` class for reading and writing files. There is also a lambda implementation which focuses more on using lambda functions and the `Stream` class. The IntelliJ IDE was used to write this application and Docker was used for deployment.",
-        "JDBC App: This application interacts with a PostgreSQL database to perform CRUD operations. Java Database Connectivity provides the framework for interacting with the database. Operations are performed using the `JDBCExecutor` class and the Data Access Object outlined in `CustomerDAO`. Maven was used to help construct the project and install the necessary dependencies."
+        "JDBC App: This application interacts with a PostgreSQL database to perform CRUD operations. Java Database Connectivity provides the framework for interacting with the database. Operations are performed using the `JDBCExecutor` class and the Data Access Object outlined in `CustomerDAO`. Maven was used to help construct the project and install the necessary dependencies.",
+        "Twitter CRUD App: The Twitter CRUD app accesses the user's Twitter account through a set of key and secret tokens and sends HTTP requests to perform CRUD operations using Twitter's REST API. This application allows the user to create, retrieve and delete Tweets using a command line interface. Core technologies used in the implementation of this application include, OAuth, Google GSON, Mockito, JUnit, Maven and Docker."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
@@ -65,24 +62,24 @@
     "competent": [
       "Bash",
       "Unity",
-      "SQL",
+      "Maven",
       "Git",
-      "Artificial Intelligence"
+      "Docker"
     ],
     "familiar": [
       "HTML",
       "Javascript",
-      "CSS",
+      "Azure",
       "React",
-      "Docker"
+      "Spring"
     ],
     "proficient": [
       "Java",
       "Python",
-      "C/C#",
+      "C",
       "Agile/Scrum",
-      "Object Oriented Programming"
+      "SQL"
     ]
   },
-  "summary": "I graduated from University of Toronto, St. George campus as a Computer Science specialist. I studied a wide range of programming languages including Python, Java and C. I have also worked on many group projects with groups as large as 13 other peers.I've taken many Computer Science courses so I am familiar with a wide range of programming languages. I have also learned about many programming principles such as Object Oriented Programming as well as Software Development Life Cycles. I've also taken a handful of mathematics courses so I am familiar with some mathematical concepts like Calculus and Linear Algebra."
+  "summary": "I graduated from University of Toronto as a Computer Science Specialist in 2021 and obtained a Bachelor's degree in this subject. During this time, I learned how to use a wide range of programming languages like Python, Java and C. I was also introduced to new technologies such as Unity and Postman and I was assigned many group projects where I learned how to collaborate with others effectively. I joined Jarvis in October where I was further trained in how to use new technologies such as Docker, Maven and JDBC and how to build programs in an effective and efficient manner. While I learned about how to use these tools, Jarvis also taught me about many effective programming practices such as the Scrum framework, Test-Driven Development as well as Continuous Integration."
 }
