@@ -8,7 +8,7 @@ I graduated from University of Toronto as a Computer Science Specialist in 2021 
 
 **Competent:** HTML, CSS, Git
 
-**Familiar:** Javascript, Maven, Docker, Unity, Bash
+**Familiar:** Javascript, Maven, Docker, Unity, Bash, SQL
 
 ## Jarvis Projects
 
